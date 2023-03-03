@@ -1,5 +1,5 @@
 {% set name = "safetensors" %}
-{% set version = "0.2.8" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/safetensors-{{ version }}.tar.gz
-  sha256: 2720b20a6a38c799dca79bd76caeeac2f7df585a9d4f7d59fa7e28eff9ccb27f
+  sha256: 5be8b2fccdc6aec84c9d6732180575fe1ba3afc559cbe96e2301eacc45c5b9a6
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
-     - {{ compiler('c') }}
-     - {{ compiler('rust') }}
+    - {{ compiler('c') }}
+    - {{ compiler('rust') }}
   host:
     - python
     - setuptools-rust
