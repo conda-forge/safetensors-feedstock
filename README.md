@@ -1,11 +1,11 @@
-About safetensors
-=================
+About safetensors-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/safetensors-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/huggingface/safetensors
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/safetensors-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast and Safe Tensor serialization
 
