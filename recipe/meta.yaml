@@ -23,6 +23,7 @@ requirements:
     - python
     - setuptools-rust
     - pip
+    - tomli
   run:
     - python
 
