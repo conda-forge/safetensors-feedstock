@@ -1,5 +1,5 @@
 {% set name = "safetensors" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/safetensors-{{ version }}.tar.gz
-  sha256: edb7072d788c4f929d0f5735d3a2fb51e5a27f833587828583b7f5747af1a2b8
+  sha256: b985953c3cf11e942eac4317ef3db3da713e274109cf7cfb6076d877054f013e
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
