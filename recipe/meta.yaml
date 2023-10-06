@@ -19,11 +19,13 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
+    - maturin
   host:
     - python
     - setuptools-rust
     - pip
     - tomli
+    - maturin
   run:
     - python
 
