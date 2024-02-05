@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/huggingface/safetensors/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b985953c3cf11e942eac4317ef3db3da713e274109cf7cfb6076d877054f013e
+  sha256: e96a3b89093bf9e3dfea02283b05b8517fe3ad4b632ab20266392688e4ca18d7
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
