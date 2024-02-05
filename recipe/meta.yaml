@@ -19,6 +19,7 @@ build:
     - export PYO3_CROSS_PYTHON_VERSION=$PY_VER
     {% endif %}
     - cd bindings/python
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
