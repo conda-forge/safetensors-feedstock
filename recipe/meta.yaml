@@ -6,11 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/huggingface/safetensors/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: e96a3b89093bf9e3dfea02283b05b8517fe3ad4b632ab20266392688e4ca18d7
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/safetensors-{{ version }}.tar.gz
+  sha256: b985953c3cf11e942eac4317ef3db3da713e274109cf7cfb6076d877054f013e
 
 build:
-  # script: {{ PYTHON }} -m pip install . -vv
   number: 0
   missing_dso_whitelist:
     - /usr/lib/libresolv.9.dylib  # [osx]
@@ -21,7 +20,6 @@ build:
     - export PYO3_CROSS_LIB_DIR=$SP_DIR/../
     - export PYO3_CROSS_PYTHON_VERSION=$PY_VER
     {% endif %}
-    - cd bindings/python
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
