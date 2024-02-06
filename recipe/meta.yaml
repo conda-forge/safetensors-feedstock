@@ -10,7 +10,7 @@ source:
   sha256: e96a3b89093bf9e3dfea02283b05b8517fe3ad4b632ab20266392688e4ca18d7
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
+  # script: {{ PYTHON }} -m pip install . -vv
   number: 0
   missing_dso_whitelist:
     - /usr/lib/libresolv.9.dylib  # [osx]
