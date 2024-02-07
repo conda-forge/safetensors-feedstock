@@ -12,14 +12,14 @@ source:
 build:
   number: 0
   script:
+    # PyPy has weird sysconfigdata name
+    - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
     {% if build_platform != target_platform %}
     - export PYO3_CROSS_INCLUDE_DIR=$PREFIX/include
     - export PYO3_CROSS_LIB_DIR=$SP_DIR/../
     - export PYO3_CROSS_PYTHON_VERSION=$PY_VER
     - export PYO3_PYTHON_VERSION=$PY_VER
     {% endif %}
-    # PyPy has weird sysconfigdata name
-    - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
     - {{ PYTHON }} -m pip install . -vv
 
 requirements:
