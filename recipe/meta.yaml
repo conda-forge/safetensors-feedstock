@@ -29,10 +29,10 @@ requirements:
     - {{ compiler('rust') }}
   host:
     - python
-    - setuptools-rust
     - pip
+    - setuptools-rust
+    - maturin >=1.0,<2.0
     - tomli
-    - maturin >=1.0,<2.0                     # [build_platform != target_platform]
   run:
     - python
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
