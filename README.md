@@ -402,4 +402,5 @@ Feedstock Maintainers
 
 * [@jan-janssen](https://github.com/jan-janssen/)
 * [@setu4993](https://github.com/setu4993/)
+* [@xhochy](https://github.com/xhochy/)
 
