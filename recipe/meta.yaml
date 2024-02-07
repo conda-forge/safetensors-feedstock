@@ -14,13 +14,8 @@ build:
   script:
     # PyPy has weird sysconfigdata name
     - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
-    {% if build_platform != target_platform %}
-    - export PYO3_CROSS_INCLUDE_DIR=$PREFIX/include
-    - export PYO3_CROSS_LIB_DIR=$SP_DIR/../
-    - export PYO3_CROSS_PYTHON_VERSION=$PY_VER
-    - export PYO3_PYTHON_VERSION=$PY_VER
-    {% endif %}
     - {{ PYTHON }} -m pip install . -vv
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
 requirements:
   build:
@@ -29,6 +24,7 @@ requirements:
     - maturin >=1.0,<2.0                     # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
+    - cargo-bundle-licenses
   host:
     - python
     - pip
@@ -51,7 +47,9 @@ about:
   home: https://github.com/huggingface/safetensors
   summary: Fast and Safe Tensor serialization
   license: Apache-2.0
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
 
 extra:
   recipe-maintainers:
