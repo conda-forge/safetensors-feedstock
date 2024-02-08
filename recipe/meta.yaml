@@ -10,7 +10,7 @@ source:
   sha256: 2304658e6ada81a5223225b4efe84748e760c46079bffedf7e321763cafb36c9
 
 build:
-  number: 1
+  number: 0
   script:
     # PyPy has weird sysconfigdata name
     - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
