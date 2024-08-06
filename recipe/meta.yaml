@@ -10,7 +10,7 @@ source:
   sha256: 2f85fc50c4e07a21e95c24e07460fe6f7e2859d0ce88092838352b798ce711c2
 
 build:
-  number: 0
+  number: 1
   script:
     # PyPy has weird sysconfigdata name
     - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
@@ -23,6 +23,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - maturin >=1.0,<2.0                     # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
   host:
@@ -33,7 +34,6 @@ requirements:
     - tomli
   run:
     - python
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.9") }}  # [osx and x86_64]
 
 test:
   imports:
