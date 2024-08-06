@@ -1,5 +1,5 @@
 {% set name = "safetensors" %}
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/safetensors-{{ version }}.tar.gz
-  sha256: 2f85fc50c4e07a21e95c24e07460fe6f7e2859d0ce88092838352b798ce711c2
+  sha256: 5fe3e9b705250d0172ed4e100a811543108653fb2b66b9e702a088ad03772a07
 
 build:
-  number: 1
+  number: 0
   script:
     # PyPy has weird sysconfigdata name
     - rm -f $PREFIX/lib/pypy$PY_VER/_sysconfigdata.py  # [build_platform != target_platform and target_platform == "linux-ppc64le"]
