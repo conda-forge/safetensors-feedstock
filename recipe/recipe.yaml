@@ -13,6 +13,8 @@ source:
   sha256: fabaf3e0f18a6618d9b36560682562157f77c2b71fcffc7b432be2baed9d753d
 
 build:
+  skip:
+    - target_platform == "linux-ppc64le" and "cp314t" in python
   number: 0
   script:
     # PyPy has weird sysconfigdata name
