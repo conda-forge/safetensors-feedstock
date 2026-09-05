@@ -15,7 +15,7 @@ source:
 build:
   skip:
     - target_platform == "linux-ppc64le" and "cp314t" in python
-  number: 0
+  number: 1
   script:
     # PyPy has weird sysconfigdata name
     - if: build_platform != target_platform and target_platform == "linux-ppc64le"
